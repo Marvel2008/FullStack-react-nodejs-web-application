@@ -1,0 +1,18 @@
+.crumbs_section {
+  background-color: #F7F1EC;
+  padding-top: 96px;
+}
+
+.container_breadcrumbs {
+  display: flex;
+  gap: 3px;
+}
+
+.crumb {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+.symbol {
+  margin-left: 5.75px;
+}/*# sourceMappingURL=crumbs.css.map */

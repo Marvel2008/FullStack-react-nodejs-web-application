@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+.dropdown-menu{
+    width: 185px;
+    border-radius: 10px;
+}    
+.dropdown-menu .list_item {
+        font-family: "Open Sans", sans-serif;
+        font-style: normal;
+        font-size: 16px;
+        color: #E2E2E2;
+        padding: 5px 14px;
+        text-decoration: none;
+        display: block;
+    }
+
+.dropdown-menu .list_item:hover {
+        color: #FFFFFF;
+        transition: 0.8s;
+}

@@ -1,0 +1,112 @@
+.good_content_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 36px;
+}
+
+.good_content {
+    background-color: #F7F1EC;
+    padding: 18px 0 76px;
+    margin-top: 2px;
+}
+
+.content-item {
+    display: none;
+}
+
+.content-item.content-item__active {
+    /*Якщо є цих двоє класів, то тоді спрацює*/
+    display: inline-block;
+    width: 630px;
+    height: 400px;
+    padding-bottom: 36px;
+}
+
+.choose-color__list {
+    display: flex;
+    gap: 36px;
+}
+
+.choose-color-btn.choose-color-btn--active {
+    display: none;
+}
+
+.choose-color-img {
+    width: 186px;
+    height: 150px;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.good_title {
+    font-family: "Montserrat Semibold", sans-serif;
+    font-size: 36px;
+    padding-bottom: 12px;
+}
+
+.good_price {
+    font-family: "Open Sans Regular", sans-serif;
+    font-size: 30px;
+}
+
+.label_content {
+    padding-left: 14px;
+    display: inline;
+}
+
+.input-group {
+    margin-top: 36px;
+}
+
+.good_count {
+    border: 1px solid #222222;
+    border-radius: 3px;
+    width: 75px;
+    background-color: transparent;
+    padding: 10px 23px;
+}
+
+.color_group {
+    padding-top: 36px;
+}
+
+.color_list {
+    display: flex;
+    gap: 20px;
+    margin-top: 14px;
+}
+.color_list_elem {
+    outline: 2px solid transparent;
+    border-radius: 7px;
+    padding: 0.2px;
+}
+.color_list_elem.active {
+    outline-color: #FF8720;
+}
+.color_list_elem_button {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    display: block;//забезпечує, що кнопки займають повну висоту та ширину без впливу inline стилів
+}
+
+.button_add_basket {
+    margin-top: 38px;
+    padding: 16px 48px;
+    font-family: "Montserrat Medium", sans-serif;
+    font-size: 24px;
+    background-color: #FF8720;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+}
+
+.attention_content {
+    max-width: 451px;
+    color: #222222;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 200;
+}

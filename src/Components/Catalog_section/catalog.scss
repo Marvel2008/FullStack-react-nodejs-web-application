@@ -1,0 +1,35 @@
+.catalog {
+    padding: 100px 0;
+    background-color: #F7F1EC;
+}
+
+.catalog_container {
+    display: flex;
+    gap: 34px;
+}
+
+.catalog_content {
+    max-width: 741px;
+    padding-top: 77px;
+}
+
+.catalog_title {
+    font-family: "Freeman", sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.catalog_info {
+    padding: 35px 0 40px;
+    color: #222222;
+
+}
+
+.catalog_button {
+    color: #FFFFFF;
+    background-color: #FF8720;
+    padding: 20px 64px;
+    border-radius: 12px;
+}

@@ -1,0 +1,42 @@
+.characteristics_section {
+  padding-bottom: 56px;
+  background-color: #F7F1EC;
+}
+
+.charac_title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.characteristics_content {
+  max-width: 630px;
+}
+
+.charac_list_elem {
+  padding: 22px 0;
+}
+
+.charac_list_elem p {
+  display: inline-block;
+  width: 297px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  /* Set the hr color */
+  background-color: #333; /* Modern Browsers */
+}
+
+.charac_list_elem_title {
+  font-family: "Open sans", sans-serif;
+  font-size: 18;
+  font-weight: 600;
+}
+
+.charac_list_elem_description {
+  font-family: "Open sans", sans-serif;
+  font-size: 18;
+  font-weight: 400;
+}/*# sourceMappingURL=good_characteristics.css.map */

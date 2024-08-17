@@ -1,0 +1,15 @@
+header {
+  background-color: #F7F1EC;
+}
+
+.header_container {
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_list {
+  display: flex;
+  gap: 24px;
+}/*# sourceMappingURL=header.css.map */

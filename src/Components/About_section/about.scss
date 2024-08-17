@@ -1,0 +1,20 @@
+.about {
+    padding: 100px 0 70px;
+    background-color: #353330;
+    display: grid;
+    grid-template-columns: 630px auto;
+  }
+  
+  .about_header {
+    color: white;
+    padding-bottom: 44px;
+  }
+  
+  .about_content {
+    color: #D9D9D9;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .about_content + .about_content {
+    padding-top: 30px;  /* відступ між параграфами */
+  }

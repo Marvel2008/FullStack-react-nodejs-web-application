@@ -1,0 +1,120 @@
+label {
+  display: block;
+  margin: 16px 0 6px;
+}
+
+main {
+  flex: 1;
+}
+
+.main_container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.main_title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 216px;
+  height: 40px;
+}
+
+form {
+  width: 500px;
+}
+form > * {
+  width: 100%;
+  text-align: left;
+}
+
+input {
+  height: 27px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+
+.submit {
+  position: relative;
+  margin: 16px 0 7px;
+  padding-left: 5px;
+  height: 32px;
+  color: #FFFFFF;
+  background-color: #FF7600;
+  border: none;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.submit svg {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.create {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #000000;
+}
+
+#wave-container {
+  position: absolute;
+  bottom: 52px;
+  left: 0;
+  right: 0;
+}
+
+#wave-container path {
+  transition: 600ms;
+}
+
+#wave-container svg {
+  max-width: 1440px;
+}
+
+hr {
+  color: #E3E0DE;
+}
+
+.show-form {
+  transform: translateX(15%);
+  opacity: 1;
+  transition: 700ms;
+}
+
+.hidden-form {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: 700ms;
+}
+
+.move-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: 700ms;
+}
+
+.move-right {
+  transform: translateX(0);
+  opacity: 1;
+  transition: 700ms;
+}
+
+.footer {
+  padding: 20px 0;
+}/*# sourceMappingURL=login.css.map */
