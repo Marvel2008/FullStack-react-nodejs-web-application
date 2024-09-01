@@ -77,19 +77,27 @@ input[type="number"] {
     gap: 20px;
     margin-top: 14px;
 }
+
 .color_list_elem {
     outline: 2px solid transparent;
     border-radius: 7px;
     padding: 0.2px;
 }
+
 .color_list_elem.active {
     outline-color: #FF8720;
 }
+
 .color_list_elem_button {
     width: 32px;
     height: 32px;
     border-radius: 4px;
-    display: block;//забезпечує, що кнопки займають повну висоту та ширину без впливу inline стилів
+    display: block; //забезпечує, що кнопки займають повну висоту та ширину без впливу inline стилів
+    position: relative;
+
+}
+.color_list_elem_button:hover + .hint{//сусідній селектор, означає що другий елемент розташовується наступним від першого в ДОМ-дереві
+    display: block;
 }
 
 .button_add_basket {
@@ -109,4 +117,12 @@ input[type="number"] {
     font-family: "Open Sans", sans-serif;
     font-size: 12px;
     font-weight: 200;
+}
+
+.hint {
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    position: absolute;
+    display: none;
 }

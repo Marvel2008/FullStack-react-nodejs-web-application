@@ -1,9 +1,9 @@
 const SectionWrapper = (sectionName, containerName, Component) =>
-    function HOC() {
+    function HOC(props) {
         return (
             <section className={`${sectionName}`}>
                 <div className={`container ${containerName}`}>
-                    <Component />
+                    <Component {...props}/>
                 </div>
             </section>
         )

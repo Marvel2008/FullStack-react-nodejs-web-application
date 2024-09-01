@@ -49,7 +49,7 @@ export default function RootLayout() {
                 <DropMenu items={braidsItems}/>
             </div>
             <NavLink to="/">Інше</NavLink>
-            <NavLink to="/"><img src="https://assets-global.website-files.com/662f8e58f3c026e1bee4151e/662fe686b853bebbdff9507e_Vector.svg" /></NavLink>
+            <NavLink to="/cart"><img src="https://assets-global.website-files.com/662f8e58f3c026e1bee4151e/662fe686b853bebbdff9507e_Vector.svg" /></NavLink>
         </>
 
     )

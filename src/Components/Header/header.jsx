@@ -1,7 +1,7 @@
 import "./header.css"
 import { Link } from "react-router-dom";
 import RootLayout from "../RootLayout/rootlayout"
-function Header() {
+export default function Header() {
     return (
         <>
             <header className="header">
@@ -16,4 +16,3 @@ function Header() {
     )
 }
 
-export default Header;

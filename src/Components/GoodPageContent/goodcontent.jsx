@@ -1,82 +1,84 @@
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import SectionWrapper from "../Section_wrapper/wrapper"
 import "./goodcontent.css"
-function GoodContent() {
-    const [active, isActive] = useState("color--black");
-    const [create, SetGoods] = useState([]);
-    const [activecolor, isColorActive] = useState("0");
+function GoodContent({ goods, active, colorgoods, handleChange }) {
+    if (!goods || !active || colorgoods.length==0) {
+        return <div>Loading</div>; // Або будь-який інший індикатор завантаження
+    }
+    const [activecolor, isColorActive] = useState(colorgoods[0].article);
     const [count, isCount] = useState("1");
-
-    useEffect(() => {
-        const fetchGoods = async () => {
-            try {
-                const response = await fetch("http://localhost:8080/selectedgoods");
-                if (!response.ok) {
-                    throw new Error("Network response was not ok " + response.statusText);
-                }
-                const data = await response.json();
-                SetGoods(data.data); // assuming your data is in the 'data' field of the response
-            } catch (error) {
-                console.error("Problem with getting data:", error);
-            }
-        };
-
-        fetchGoods();
-    }, []); // пустий масив залежностей означає, що цей ефект виконається лише один раз після першого рендеру
-
+    const [GoodInCart, SetGoodInCart] = useState({})
 
     const counthandleChange = (newValue) => {
         isCount(newValue.target.value);
     }
-    const handleChange = (newValue) => {
-        isActive(newValue)
-    }
+
     const colorhandleChange = (newValue) => {
         isColorActive(newValue);
     }
-
-    const addtocart = async () => {
+    //Тут використати useReducer що параметри змінювалися
+    const addtocart = () => {
         //Зберігати в сесіях кількість та колір обраного товара
-        let id = create.find(elem => elem.data_button === active).id
-        const response = await fetch(`http://localhost:8080/add-to-cart/${id}`, {
-            method: 'GET',
-            credentials: 'include',
-        })
-        if (!response.ok) {
-            console.log("Error!")
-        } else {
-            console.log("Success")
+        const selectedcolor = colorgoods.find(elem => elem.article===activecolor).color
+        const selectedGood = goods.find(elem => elem.article === active);
 
-        }
-
-        const sessionresponse = await fetch('http://localhost:8080/api/session', {
-            method: 'GET',
-            credentials: 'include',
-        })
-        const sessiondata = await sessionresponse.json()
-        console.log("Session Data", sessiondata)
+        SetGoodInCart(prevState => ({
+            ...prevState,
+            article: activecolor,
+            color: selectedcolor,
+            img: selectedGood.imagePATH,
+            amount: count,
+            price: selectedGood.price * count,//Не передавати
+        }));
     }
+
+    useEffect(()=>{
+        if (Object.keys(GoodInCart).length > 0) { // Перевіряємо, чи не порожній об'єкт
+            (async () => {
+                try {
+                    const response = await fetch('http://localhost:8080/add-to-cart', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        credentials: 'include',
+                        body: JSON.stringify(GoodInCart),
+                    })
+                    if (!response.ok) {
+                        console.log("Error!")
+                    }
+                    const sessionresponse = await fetch('http://localhost:8080/api/session', {
+                        method: 'GET',
+                        credentials: 'include',
+                    })
+                    const sessiondata = await sessionresponse.json()
+                    console.log("Session Data", sessiondata)
+                } catch (error) {
+                    console.log("Error during request ", error)
+                }
+            })()
+        }
+    },[GoodInCart])
 
     return (
 
         <>
-            {/* {console.log("goods", create.find(elem => elem.data_button === active).id)} */}
             <div className="img_good">
                 <div className="choose-color-active">
                     {
-                        create.map((item, index) => (
+                        goods.map((item, index) => (
                             <div key={index}>
-                                <img className={`content-item ${item.data_button === active ? "content-item__active" : ""}`} src={`http://localhost:8080/assets/${item.imagePATH}`} />
+                                <img className={`content-item ${item.article === active ? "content-item__active" : ""}`} src={`http://localhost:8080/assets/${item.imagePATH}`} />
                             </div>
                         ))
                     }
                 </div>
 
                 <div className="choose-color__list">
-                    {create.map((item, index) => (
+                    {goods.map((item, index) => (
                         <button key={index}
-                            className={`choose-color-btn ${active === item.data_button ? "choose-color-btn--active" : ""}`}
-                            onClick={() => handleChange(item.data_button)}
+                            className={`choose-color-btn ${active === item.article ? "choose-color-btn--active" : ""}`}
+                            onClick={() => handleChange(item.article)}
                         >
                             <img className="choose-color-img" src={`http://localhost:8080/assets/${item.imagePATH}`} alt="" />
                         </button>
@@ -87,8 +89,8 @@ function GoodContent() {
             </div>
             <div className="good_purchase">
                 <p className="good_title">Блекаут Твін двосторонній</p>
-                {create.map((item, index) => (
-                    <p key={index} className="good_price">{active === item.data_button ? `${item.price * count}  пог/м` : ""}</p>
+                {goods.map((item, index) => (
+                    <p key={index} className="good_price">{active === item.article ? `${item.price * count}  пог/м` : ""}</p>
 
                 ))}
                 <div className="input-group">
@@ -98,11 +100,18 @@ function GoodContent() {
                 <div className="color_group">
                     <p className="color_title">Кольори:</p>
                     <ul className="color_list">
-                        {create.find(elem => elem.data_button === active)?.color.map((color, index) => (
+                        {colorgoods.map((item,index)=>(
+                            <li key={index} onClick={() => colorhandleChange(item.article)} className={`color_list_elem ${item.article === activecolor ? "active" : ""}`}>
+                            <button className={`color_list_elem_button`} style={{ backgroundColor: item.color }}></button>
+                            <p className="hint">{`Amount:${item.amount}`}</p>
+                        </li>
+                        ))}
+                        {/* {create.find(elem => elem.data_button === active)?.color.map((color, index) => (
                             <li key={index} onClick={() => colorhandleChange(index)} className={`color_list_elem ${index === activecolor ? "active" : ""}`}>
                                 <button className={`color_list_elem_button`} style={{ backgroundColor: color }}></button>
                             </li>
-                        ))}
+                        ))} */}
+
                         {/* find-знаходить перший елемент, ?-оператор опціональної ланцюжкової обробки для безпечного доступу до кольорів 
                             якщо елемента не знайдено, то поверне undefined і map не буде викликано  */}
 

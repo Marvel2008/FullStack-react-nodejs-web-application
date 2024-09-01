@@ -94,6 +94,11 @@ input[type=number] {
   height: 32px;
   border-radius: 4px;
   display: block;
+  position: relative;
+}
+
+.color_list_elem_button:hover + .hint {
+  display: block;
 }
 
 .button_add_basket {
@@ -113,4 +118,12 @@ input[type=number] {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   font-weight: 200;
+}
+
+.hint {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  position: absolute;
+  display: none;
 }/*# sourceMappingURL=goodcontent.css.map */
