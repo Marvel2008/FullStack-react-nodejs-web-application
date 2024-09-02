@@ -50,7 +50,8 @@ app.use(cookieParser())
 app.use(session({
     store: new pgSession(pgStoreConfig),
     secret: 'secret',
-    resave: true,//don't resave a session that hasn't been modified
+    //resave: true,don't resave a session that hasn't been modified
+    resave: false,
     saveUninitialized: false,// don't save the initial session if the session object is unmodified (i.e the user did not log in)
     cookie: { maxAge: 180 * 60 * 10 }
 }))

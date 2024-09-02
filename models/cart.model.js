@@ -21,4 +21,8 @@ module.exports = function Cart(oldCart){
         }
         return arr;
     }
+    this.getItemsCount = function(){
+        return this.totalQty
+    }
+
 }

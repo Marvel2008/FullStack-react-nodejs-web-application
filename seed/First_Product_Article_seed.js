@@ -1,102 +1,98 @@
 const goods=[
     {
-        article: "с_01",
+        article: "c_01",
         name: "Блекаут",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Curtains1.jpg"
     },
     {
-        article: "с_02",
+        article: "c_02",
         name: "Дімаут",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Curtains2.jpg"
     },
     {
-        article: "с_03",
+        article: "c_03",
         name: "Італія",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Curtains3.jpg"
     },{
-        article: "с_04",
+        article: "c_04",
         name: "Мармур",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Curtains4.jpg"
     },{
-        article: "с_05",
+        article: "c_05",
         name: "Граніт",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Curtains5.jpg"
     },{
-        article: "с_06",
+        article: "c_06",
         name: "Ангора",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Curtains6.jpg"
     },{
-        article: "с_07",
+        article: "c_07",
         name: "Дакота",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Curtains7.jpg"
     },
     {
         article: "t_01",
         name: "Бамбук",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Tulle1.jpg"
     },{
         article: "t_02",
         name: "Льон",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Tulle2.jpg"
     },{
         article: "t_03",
         name: "Канвас",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Tulle3.jpg"
     },{
         article: "t_04",
         name: "Жакард",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Tulle4.jpg"
     },{
         article: "t_05",
         name: "Амбре",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Tulle5.jpg"
     },{
         article: "t_06",
         name: "Пабло",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Tulle6.jpg"
     },{
         article: "t_07",
         name: "Паскаль",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Tulle7.jpg"
     },
     {
         article: "b_01",
         name: "Променева",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Braid1.jpg"
     },{
         article: "b_02",
         name: "Бантова",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Braid2.jpg"
     },{
         article: "b_03",
         name: "Люверсна не фіксована",
-        imagePATH: "Rectangle(2).jpg"
-    },{
-        article: "b_04",
-        name: "Люверсна фіксована",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "Braid3.jpg"
     },
     {
         article: "mm_01",
         name: "Овал великий",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "MaintMag1.jpg"
     },{
         article: "mm_02",
         name: "Великий круглий",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "MaintMag2.jpg"
     },{
         article: "mm_03",
         name: "Куля",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "MaintMag3.jpg"
     },
     {
         article: "mh_01",
         name: "На кільце",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "MaintHook1.jpg"
     },{
         article: "mh_02",
         name: "Класичний",
-        imagePATH: "Rectangle(2).jpg"
+        imagePATH: "MaintHook2.jpg"
     },
 ]
 

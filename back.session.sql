@@ -16,5 +16,22 @@
 -- DELETE from session
 
 -- SELECT * from FirstArticles
+-- 
 
-SELECT * from firstarticles
+
+-- UPDATE secondarticles sa
+-- SET amount = (
+--     SELECT COALESCE(SUM(fa.amount), 0)
+--     FROM fourtharticles fa
+--     WHERE fa.article LIKE sa.article || '%'
+-- )
+-- WHERE EXISTS (
+--     SELECT 1
+--     FROM fourtharticles fa
+--     WHERE fa.article LIKE sa.article || '%'
+-- );
+
+
+-- SELECT * from fourtharticles
+-- DELETE from fourtharticles
+SELECT * from session
